@@ -1,0 +1,46 @@
+.layout {
+  display: flex;
+  height: 100vh;
+
+  .sidebar {
+    width: 200px;
+    background: var(--bg-surface);
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin: 0.5rem;
+        padding: 0.5rem;
+      }
+    }
+
+    .side-header {
+      margin: 0;
+      padding: 0.1rem;
+
+      p {
+        margin-left: 1rem;
+        color: var(--text-muted)
+      }
+    }
+
+    .side-main-content {
+      padding: 0.5rem;
+      flex: 1; /* takes up all available space */
+      overflow-y: auto;
+    }
+
+    .side-bottom-content {
+      padding: 0.5rem;
+      position: fixed;
+      bottom: 0;
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
