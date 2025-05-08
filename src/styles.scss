@@ -2,8 +2,8 @@
 
 :root {
   /* For GitHub "Dark Default" (a bit bluish) */
-  --darkest-color: #0D1117;
-  --bg-primary: #010409;
+  --darkest-color: #010409;
+  --bg-primary: #0D1117;
   --bg-surface: #151B23;
   --bg-elevated: #262C36;
   --text-muted: #3D444D;
@@ -42,7 +42,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: var(--bg-primary);
+  background: var(--darkest-color);
 }
 
 body {

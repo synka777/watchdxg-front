@@ -15,12 +15,21 @@ export class AuthGuard implements CanActivate {
     // - The path and component being navigated to.
     state: RouterStateSnapshot // Represents the entire router state at the moment
   ): Observable<boolean> | Promise<boolean> | boolean {
-    const token = localStorage.getItem('token') // If no token found, redirect to login
-    if(token) {
+    const login = localStorage.getItem('login') // If no token found, redirect to login
+    if(login) {
+      // Check if the user is trying to access the login page when already logged in
+      if (state.url === '/login') {
+        this.router.navigate(['/main'], { replaceUrl: true }) // If so, redirect to the main page
+        return false // Prevent access to the login page
+      }
       return true
     } else {
-      this.router.navigate(['/login']) // Redirects to login
-      return false // And make sure we can't activate the route wanted to reach
+      if (state.url !== '/login') {
+        // If not logged in and trying to access any route other than /login, redirect to /login
+        this.router.navigate(['/login'], { replaceUrl: true });
+      }
+      // Allow access to /login only if not logged in
+      return state.url === '/login'
     }
   }
 }
