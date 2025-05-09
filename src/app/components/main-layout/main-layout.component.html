@@ -6,16 +6,34 @@
       </div>
       <div class="side-main-content">
         <ul> <!-- Use routerLinkActive to make easier dynamic CSS class assignment -->
-          <li><a routerLink="/dashboard" routerLinkActive="active" >Dashboard</a></li>
-          <li><a routerLink="/users" routerLinkActive="active">Users</a></li>
-          <li><a routerLink="/actions" routerLinkActive="active">Actions</a></li>
-          <li><a routerLink="/logs" routerLinkActive="active">App logs</a></li>
+          <li>
+            <mat-icon>dashboard</mat-icon>
+            <a routerLink="/dashboard" routerLinkActive="active" >Dashboard</a>
+          </li>
+          <li>
+            <mat-icon>supervised_user_circle</mat-icon>
+            <a routerLink="/users" routerLinkActive="active">Users</a>
+          </li>
+          <li>
+            <mat-icon>offline_bolt</mat-icon>
+            <a routerLink="/actions" routerLinkActive="active">Actions</a>
+          </li>
+          <li>
+            <mat-icon>assignment</mat-icon>
+            <a routerLink="/logs" routerLinkActive="active">App logs</a>
+          </li>
         </ul>
       </div>
       <div class="side-bottom-content">
         <ul>
-          <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
-          <li><a routerLink="/help" routerLinkActive="active">Help</a></li>
+          <li>
+            <mat-icon>settings</mat-icon>
+            <a routerLink="/settings" routerLinkActive="active">Settings</a>
+          </li>
+          <li>
+            <mat-icon>info</mat-icon>
+            <a routerLink="/help" routerLinkActive="active">About</a>
+          </li>
         </ul>
       </div>
     </nav>
