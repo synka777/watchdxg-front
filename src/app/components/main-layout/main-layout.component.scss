@@ -6,6 +6,7 @@
     width: 200px;
     background: var(--bg-surface);
     font-size: large;
+    position: relative;
 
     ul {
       font-size: 15px;
@@ -14,21 +15,30 @@
 
       li {
         display: flex;
-        margin: 0.5rem;
-        padding: 0.5rem;
         align-items: center;
 
-        mat-icon {
+        a {
+          all: unset; // Disables default anchor styles
+          cursor: pointer; // Display pointer on hover
+          margin: 0.25rem;
+          padding: 0.5rem;
           display: flex;
-          margin-right: 0.7rem;
-          font-size: 20px;
-          justify-content: center;
           align-items: center;
-        }
-        // a {
-        //   display: flex;
+          width: 100%;
 
-        // }
+          mat-icon {
+            display: flex;
+            margin-right: 0.7rem;
+            font-size: 20px;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        a.active {
+          background: var(--bg-elevated);
+          border-radius: 0.5rem;
+        }
       }
     }
 
@@ -45,13 +55,15 @@
     .side-main-content {
       padding: 0.5rem;
       flex: 1; /* takes up all available space */
-      overflow-y: auto;
     }
 
     .side-bottom-content {
+      position: absolute; // Bounded by the sidebar's position
       padding: 0.5rem;
-      position: fixed;
+      flex: 1; /* takes up all available space */
       bottom: 0;
+      width: 100%;
+      box-sizing: border-box; // Ensures the width stays within the sidebar
     }
   }
 }
