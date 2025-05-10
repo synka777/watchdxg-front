@@ -22,7 +22,7 @@ export class LoginComponent {
       } catch(error) {
         console.error('Unable to store login status')
       } finally {
-        this.router.navigate(['/main'])
+        this.router.navigate(['/main/dashboard'])
       }
     }
   }

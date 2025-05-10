@@ -1,33 +1,33 @@
 <div class="layout">
   <aside class="sidebar">
-    <nav>
+    <nav [class.collapsed]="isCollapsed">
       <div class="side-header">
-        <p>Watchdxg Manager</p>
+        <p *ngIf="!isCollapsed">Watchdxg Manager</p>
       </div>
       <div class="side-main-content">
         <ul> <!-- Use routerLinkActive to make easier dynamic CSS class assignment -->
           <li>
             <a routerLink="dashboard" routerLinkActive="active" >
               <mat-icon>dashboard</mat-icon>
-              Dashboard
+              <span class="label" *ngIf="!isCollapsed">Overview</span>
             </a>
           </li>
           <li>
             <a routerLink="users" routerLinkActive="active">
               <mat-icon>supervised_user_circle</mat-icon>
-              Users
+              <span class="label" *ngIf="!isCollapsed">Users</span>
             </a>
           </li>
           <li>
             <a routerLink="actions" routerLinkActive="active">
               <mat-icon>offline_bolt</mat-icon>
-              Actions
+              <span class="label" *ngIf="!isCollapsed">Actions</span>
             </a>
           </li>
           <li>
             <a routerLink="logs" routerLinkActive="active">
               <mat-icon>assignment</mat-icon>
-              App logs
+              <span class="label" *ngIf="!isCollapsed">App logs</span>
             </a>
           </li>
         </ul>
@@ -37,16 +37,17 @@
           <li>
             <a routerLink="settings" routerLinkActive="active">
               <mat-icon>settings</mat-icon>
-              Settings
+              <span class="label" *ngIf="!isCollapsed">Settings</span>
             </a>
           </li>
           <li>
             <a routerLink="help" routerLinkActive="active">
               <mat-icon>info</mat-icon>
-              About
+              <span class="label" *ngIf="!isCollapsed">About</span>
             </a>
           </li>
         </ul>
+        <button class="toggle-button" (click)="toggleSidebar()">☰</button>
       </div>
     </nav>
   </aside>

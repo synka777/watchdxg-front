@@ -3,10 +3,64 @@
   height: 100vh;
 
   .sidebar {
-    width: 200px;
-    background: var(--bg-surface);
     font-size: large;
     position: relative;
+
+    nav {
+      position: relative;
+      flex-direction: column;
+      width: 200px;
+      height: 100%;
+      background: var(--bg-surface);
+      overflow: hidden;;
+      transition: width 0.3s ease; // Smooth transition for both collapsed and expanded states
+      white-space: nowrap;
+    }
+
+    nav.collapsed {
+      width: 60px; // Collapsed width
+      overflow: hidden; // Hide overflow content
+      .toggle-button {
+        padding-right: 1.1rem
+      }
+    }
+
+    .side-header {
+      margin: 0;
+      padding: 0.1rem;
+
+      p {
+        margin-left: 1rem;
+        color: var(--text-muted);
+      }
+    }
+
+    .side-main-content {
+      padding: 0.5rem;
+      flex: 1; /* takes up all available space */
+    }
+
+    .side-bottom-content {
+      position: absolute; // Bounded by the sidebar's position
+      box-sizing: border-box; // Ensures the width stays within the sidebar
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      flex: 1; /* takes up all available space */
+      bottom: 0;
+      width: 100%;
+    }
+
+    .toggle-button {
+      position: absolute;
+      background: none;
+      color: var(--text-muted);
+      border: none;
+      cursor: pointer;
+      right: 0;
+      bottom: -1rem;
+      font-size: x-large;
+      padding: 0.5rem;
+    }
 
     ul {
       font-size: 15px;
@@ -40,30 +94,6 @@
           border-radius: 0.5rem;
         }
       }
-    }
-
-    .side-header {
-      margin: 0;
-      padding: 0.1rem;
-
-      p {
-        margin-left: 1rem;
-        color: var(--text-muted)
-      }
-    }
-
-    .side-main-content {
-      padding: 0.5rem;
-      flex: 1; /* takes up all available space */
-    }
-
-    .side-bottom-content {
-      position: absolute; // Bounded by the sidebar's position
-      padding: 0.5rem;
-      flex: 1; /* takes up all available space */
-      bottom: 0;
-      width: 100%;
-      box-sizing: border-box; // Ensures the width stays within the sidebar
     }
   }
 }
