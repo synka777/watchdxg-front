@@ -9,7 +9,7 @@
     nav {
       position: relative;
       flex-direction: column;
-      width: 200px;
+      width: 190px;
       height: 100%;
       background: var(--bg-surface);
       overflow: hidden;;
@@ -59,6 +59,7 @@
       right: 0;
       bottom: -1rem;
       font-size: x-large;
+      margin-right: 0.1rem;
       padding: 0.5rem;
     }
 
@@ -67,27 +68,31 @@
       list-style-type: none;
       padding: 0;
 
+      .btn {
+        all: unset; // Disables default anchor styles
+        cursor: pointer; // Display pointer on hover
+        margin: 0.25rem;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        mat-icon {
+          display: flex;
+          margin-right: 0.7rem;
+          font-size: 20px;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .logout-btn {
+        color: var(--text-muted)
+      }
+
       li {
         display: flex;
         align-items: center;
-
-        a {
-          all: unset; // Disables default anchor styles
-          cursor: pointer; // Display pointer on hover
-          margin: 0.25rem;
-          padding: 0.5rem;
-          display: flex;
-          align-items: center;
-          width: 100%;
-
-          mat-icon {
-            display: flex;
-            margin-right: 0.7rem;
-            font-size: 20px;
-            justify-content: center;
-            align-items: center;
-          }
-        }
 
         a.active {
           background: var(--bg-elevated);
