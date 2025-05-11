@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "watchdxg-gui": {
+    "watchdxg-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/watchdxg-gui",
+            "outputPath": "dist/watchdxg-front",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "watchdxg-gui:build:production"
+              "buildTarget": "watchdxg-front:build:production"
             },
             "development": {
-              "buildTarget": "watchdxg-gui:build:development"
+              "buildTarget": "watchdxg-front:build:development"
             }
           },
           "defaultConfiguration": "development"
