@@ -32,6 +32,9 @@
       color: var(--text-input);
       font-style: bold;
     }
+    input:focus::placeholder {
+      color: transparent;
+    }
   }
   button {
     all: unset;

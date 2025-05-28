@@ -52,7 +52,10 @@ export class MainLayoutComponent implements OnInit{
   }
 
   logout() {
-    localStorage.removeItem('login')
+    const keys = ['access', 'refresh', 'handle', 'uid']
+    for (const key of keys) {
+      localStorage.removeItem(key)
+    }
     this._router.navigate(['/login'])
   }
 }
