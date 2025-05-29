@@ -2,16 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { AccountResponse } from '../interfaces/account-response.interface';
+import { LoginResponse } from '../interfaces/login-response.interface';
+import { XUser } from '../interfaces/xuser.interface';
 
-interface LoginResponse {
-  refresh: string,
-  access: string
-}
-
-interface AccountResponse {
-  id: string,
-  handle: string
-}
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +23,11 @@ export class ApiService {
         authorization: `Bearer ${token}`
       })
     }
+  }
+
+  getUsers(): Observable<Array<XUser>>{
+    const uid = localStorage.getItem('uid')
+    return this._http.get<Array<XUser>>(`${this._apiUrl}/users/?account_id=${uid}`, this._getHeaders())
   }
 
   getAccountId(username: string): Observable<AccountResponse>{

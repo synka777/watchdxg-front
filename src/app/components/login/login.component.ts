@@ -3,18 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AccountResponse } from '../../interfaces/account-response.interface';
+import { LoginResponse } from '../../interfaces/login-response.interface';
 import { ApiService } from '../../services/api.service';
 
-
-interface LoginResponse {
-  refresh: string,
-  access: string
-}
-
-interface AccountResponse {
-  id: string,
-  handle: string
-}
 
 @Component({
   selector: 'app-login',
