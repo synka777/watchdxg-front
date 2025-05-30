@@ -1,20 +1,32 @@
 <div class="zones-container">
   <div>Followers/All</div>
-  <section class="harmful-zone">
-    <h2>Harmful</h2>
+  <section >
+    <div class="header harmful">
+      <h2>Harmful</h2>
+    </div>
     <!-- <app-user-card *ngFor="let user of harmfulUsers" [xUser]="user"></app-user-card> -->
-    <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
+    <div class="userlist-wrapper">
+      <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
+    </div>
   </section>
 
-  <section class="unclassified-zone">
-    <h2>Unclassified</h2>
+  <section>
+    <div class="header unclassified">
+      <h2>Unclassified</h2>
+    </div>
     <!-- <app-user-card *ngFor="let user of unclassifiedUsers" [xUser]="user"></app-user-card> -->
-    <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
-  </section>
+    <div  class="userlist-wrapper">
+      <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
+    </div>
+    </section>
 
-  <section class="sane-zone">
-    <h2>Sane</h2>
+  <section>
+    <div class="header sane">
+      <h2>Sane</h2>
+    </div>
     <!-- <app-user-card *ngFor="let user of saneUsers" [xUser]="user"></app-user-card> -->
-    <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
-  </section>
+    <div class="userlist-wrapper">
+      <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
+    </div>
+    </section>
 </div>

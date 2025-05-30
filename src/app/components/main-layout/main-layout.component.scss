@@ -7,7 +7,7 @@
     position: relative;
 
     nav {
-      position: relative;
+      position: fixed;
       flex-direction: column;
       width: 190px;
       height: 100%;
@@ -101,9 +101,15 @@
       }
     }
   }
-}
 
-.main-content {
-  flex: 1;
-  padding: 2rem;
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 190px;
+    transition: margin-left 0.3s ease; // Smooth transition for both collapsed and expanded states
+  }
+
+  .main-content.collapsed {
+    margin-left: 60px; // Collapsed sidebar width
+  }
 }

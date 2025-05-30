@@ -20,10 +20,7 @@ export class UsersComponent implements OnInit{
   ngOnInit() {
     this._apiService.getUsers()
     .pipe(
-      tap((users: Array<XUser>) => {
-        this.users = users
-        console.log(users)
-      })
+      tap((users: Array<XUser>) => this.users = users)
     ).subscribe()
   }
 }
