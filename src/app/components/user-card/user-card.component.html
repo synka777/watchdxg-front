@@ -1,13 +1,21 @@
 <div class="card-wrapper">
   <p>{{ xUser.username }}</p>
-  <div class="info-div">
-    <p>{{ xUser.handle }}</p>
-    <p>{{ xUser.created_at }}</p>
-    <p>{{ xUser.followers_count }}</p>
-    <p>{{ xUser.following_count }}</p>
-  </div>
-  <div class="content-div">
-    <p>{{ xUser.bio }}</p>
-    <p>{{ xUser.featured_url }}</p>
+  <div class="data-wrapper">
+    <div class="member-info ellipsis">
+      <p>{{ xUser.handle }}</p>
+      <p>{{ xUser.created_at | date:"MMM yyyy" }}</p> <!-- MMMM for full month display -->
+    </div>
+    <div class="content">
+      <div class="numbers">
+        <div>Following: {{ xUser.following_count }}</div>
+        <div>Followers: {{ xUser.followers_count }}</div>
+      </div>
+
+      <p *ngIf="xUser.bio; else noBio">{{ xUser.bio }}</p>
+      <ng-template #noBio>
+        <p>User has no description</p>
+      </ng-template>
+      <p *ngIf=xUser.featured_url>Featured URL: {{ xUser.featured_url }}</p>
+    </div>
   </div>
 </div>

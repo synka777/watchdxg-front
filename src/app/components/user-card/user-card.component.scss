@@ -1,0 +1,38 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  background: var(--bg-elevated);
+  p {
+    margin: 10px;
+  }
+
+  .data-wrapper {
+    background: var(--bg-surface);
+    display: flex;
+
+    .member-info {
+      // background: green;
+    }
+
+    .numbers {
+      display: flex;
+      justify-content: space-around;
+      width: 70%;
+      padding: 10px;
+    }
+
+    .content {
+      width: 100%;
+    }
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;       /* Keep text on one line */
+  overflow: hidden;          /* Hide anything that overflows */
+  text-overflow: ellipsis;   /* Add the "…" at the end */
+  width: 200px;              /* Set a fixed width */
+}
