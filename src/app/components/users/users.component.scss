@@ -1,16 +1,26 @@
-.zones-container {
-  // display: flex;
+.users-header {
+  display: flex;
   flex-direction: column;
+  height: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.zones-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem; /* instead of 16px */
 
   section {
-    display: grid;
-    // background: var(--bg-surface);
     border-radius: 0.5rem;
 
-    margin-bottom: 2rem;
-
     h2 {
-      margin: 0%;
+      margin: 0;
     }
     .userlist-wrapper {
       max-height: 50vh;
@@ -25,18 +35,15 @@
       border-top-right-radius: 0.5rem;
       padding-left: 0.5rem;
     }
+
     .harmful {
       background: var(--hot-red);
     }
-
     .unclassified {
-      background: grey;
+      background: var(--text-muted);
     }
-
     .sane {
-      background: green;
+      background: var(--healthy-green);
     }
   }
-
-
 }
