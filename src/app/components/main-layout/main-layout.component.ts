@@ -5,6 +5,8 @@ import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
+import { TokenService } from '../../services/token.service';
+
 
 @Component({
   selector: 'app-main-layout',
@@ -20,6 +22,7 @@ export class MainLayoutComponent implements OnInit{
 
   constructor (
     private _router: Router,
+    private _tokenService: TokenService,
     private _breakpointObserver: BreakpointObserver
   ) {}
 
@@ -52,10 +55,6 @@ export class MainLayoutComponent implements OnInit{
   }
 
   logout() {
-    const keys = ['access', 'refresh', 'handle', 'uid']
-    for (const key of keys) {
-      localStorage.removeItem(key)
-    }
-    this._router.navigate(['/login'])
+    this._tokenService.logout()
   }
 }

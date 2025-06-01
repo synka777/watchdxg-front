@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AccountResponse } from '../../interfaces/account-response.interface';
-import { LoginResponse } from '../../interfaces/login-response.interface';
+import { TokenResponse } from '../../interfaces/token-response.interface';
 import { ApiService } from '../../services/api.service';
 
 
@@ -20,22 +20,11 @@ export class LoginComponent {
 
   constructor(private _router: Router, private _apiService: ApiService) {}
 
-  // onSubmit() {
-  //   if(this.username && this.password){
-  //     try {
-  //       localStorage.setItem('login', 'true')
-  //     } catch(error) {
-  //       console.error('Unable to store login status')
-  //     } finally {
-  //       this.router.navigate(['/main/dashboard'])
-  //     }
-  //   }
-  // }
   onSubmit() {
     // First we need to get a token with the default credentials
     this._apiService.login()
     .pipe( // Define a custom interface to understand what's returned by the API call
-      tap((res: LoginResponse) => {
+      tap((res: TokenResponse) => {
         try {
           console.log(res.access)
           localStorage.setItem('access', res.access)
