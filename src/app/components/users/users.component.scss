@@ -24,6 +24,8 @@
     }
 
     .userlist-wrapper {
+      // display: flex;
+      // flex-direction: column;
       max-height: 50vh;
       overflow-y: auto;
     }
@@ -45,6 +47,28 @@
     }
     .sane {
       background: var(--healthy-green);
+    }
+
+    .placeholder {
+      display: flex;
+      height: 50vh;
+      border-radius: 0.5rem;
+      background: var(--bg-surface);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 8px solid var(--bg-surface);
+      border-top-color: var(--notif-high); /* or your theme color */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   }
 }

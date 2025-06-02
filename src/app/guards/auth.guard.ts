@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     if(token) {
       // Check if the user is trying to access the login page when already logged in
       if (state.url === '/login') {
-        this.router.navigate(['/main'], { replaceUrl: true }) // If so, redirect to the main page
+        this.router.navigate(['/main/dashboard'], { replaceUrl: true }) // If so, redirect to the main page
         return false // Prevent access to the login page
       }
       return true

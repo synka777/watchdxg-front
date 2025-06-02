@@ -8,28 +8,43 @@
       <h2>Harmful</h2>
     </div>
     <!-- <app-user-card *ngFor="let user of harmfulUsers" [xUser]="user"></app-user-card> -->
-    <div class="userlist-wrapper">
+    <div class="userlist-wrapper" *ngIf="!loading; else placeholderHarmful">
       <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
     </div>
+    <ng-template #placeholderHarmful>
+      <div class="placeholder">
+        <div class="spinner"></div>
+      </div>
+    </ng-template>
   </section>
+
+<section>
+    <div class="header sane">
+      <h2>Sane</h2>
+    </div>
+    <!-- <app-user-card *ngFor="let user of saneUsers" [xUser]="user"></app-user-card> -->
+    <div class="userlist-wrapper" *ngIf="!loading; else placeholderSane">
+      <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
+    </div>
+    <ng-template #placeholderSane>
+      <div class="placeholder">
+        <div class="spinner"></div>
+      </div>
+    </ng-template>
+    </section>
 
   <section>
     <div class="header unclassified">
       <h2>Unclassified</h2>
     </div>
     <!-- <app-user-card *ngFor="let user of unclassifiedUsers" [xUser]="user"></app-user-card> -->
-    <div  class="userlist-wrapper">
+    <div  class="userlist-wrapper" *ngIf="!loading; else placeholderUnclassified">
       <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
     </div>
-    </section>
-
-  <section>
-    <div class="header sane">
-      <h2>Sane</h2>
-    </div>
-    <!-- <app-user-card *ngFor="let user of saneUsers" [xUser]="user"></app-user-card> -->
-    <div class="userlist-wrapper">
-      <app-user-card *ngFor="let user of users" [xUser]="user"></app-user-card>
-    </div>
+    <ng-template #placeholderUnclassified>
+      <div class="placeholder">
+        <div class="spinner"></div>
+      </div>
+    </ng-template>
     </section>
 </div>
